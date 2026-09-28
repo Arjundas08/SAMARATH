@@ -11,14 +11,10 @@ import {
   Send,
   RefreshCw,
   ArrowRight,
-  Layers,
   Wrench,
-  Zap,
   Activity,
   UserCheck,
   AlertOctagon,
-  ChevronRight,
-  ExternalLink,
 } from 'lucide-react';
 
 interface AssetOption {
@@ -76,7 +72,7 @@ export const FieldReporterView: React.FC<{ onNavigateToCockpit?: () => void }> =
   const [severity, setSeverity] = useState<string>('HIGH');
   const [workPackageId, setWorkPackageId] = useState<string>('WP-VKC-0101');
   const [remarks, setRemarks] = useState<string>('');
-  const [submittedBy, setSubmittedBy] = useState<string>('SSE / P-Way (Vadodara)');
+  const submittedBy = 'SSE / P-Way (Vadodara)';
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [lastResult, setLastResult] = useState<FieldSubmissionResult | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
