@@ -13,6 +13,9 @@
 [![OR-Tools](https://img.shields.io/badge/OR--Tools-CP--SAT-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/optimization)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-samarath--nirvikalp.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://samarath-nirvikalp.vercel.app/)
+[![Backend API](https://img.shields.io/badge/Backend%20API-samarath--api.onrender.com-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://samarath-api.onrender.com/)
+[![Swagger Docs](https://img.shields.io/badge/Swagger%20Docs-Interactive%20OpenAPI-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](https://samarath-api.onrender.com/docs)
 
 ---
 
