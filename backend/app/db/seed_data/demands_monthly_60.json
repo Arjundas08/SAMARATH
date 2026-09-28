@@ -1,0 +1,1942 @@
+[
+  {
+    "business_key": "TASK-ENG-0001",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "BALLAST_CLEANING",
+    "description": "Ballast Cleaning on SEC-01-UP between BRV and ALP",
+    "station_from": "BRV",
+    "station_to": "ALP",
+    "track_segment_id": "SEC-01-UP",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-01T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ALP-BRV-UP",
+    "requires_speed_restriction_after": true,
+    "imposed_speed_kmh": 45,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0002",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "CANTILEVER_ADJUSTMENT",
+    "description": "Cantilever Adjustment on SEC-01-DN between ALP and BRV",
+    "station_from": "ALP",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-01-DN",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-02T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ALP-BRV-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0003",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "EI_DATA_LOG_CHECK",
+    "description": "Ei Data Log Check on SEC-02-UP between CHR and BRV",
+    "station_from": "CHR",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-02-UP",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-03T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0004",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "RAIL_GRINDING",
+    "description": "Rail Grinding on SEC-02-DN between BRV and CHR",
+    "station_from": "BRV",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-02-DN",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-04T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0005",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "OHE_REHABILITATION",
+    "description": "Ohe Rehabilitation on SEC-03-UP between DLT and CHR",
+    "station_from": "DLT",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-03-UP",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-05T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-CHR-DLT-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0006",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "AXLE_COUNTER_TESTING",
+    "description": "Axle Counter Testing on SEC-03-DN between CHR and DLT",
+    "station_from": "CHR",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-03-DN",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-06T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0007",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "TURNOUT_TAMPING",
+    "description": "Turnout Tamping on SEC-04-UP between ECH and DLT",
+    "station_from": "ECH",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-04-UP",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-07T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0008",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "NEUTRAL_SECTION_CHECK",
+    "description": "Neutral Section Check on SEC-04-DN between DLT and ECH",
+    "station_from": "DLT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-04-DN",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-08T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-DLT-ECH-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0009",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "POINT_MACHINE_OVERHAUL",
+    "description": "Point Machine Overhaul on SEC-05-UP between FXT and ECH",
+    "station_from": "FXT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-05-UP",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-09T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0010",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "PLAIN_TRACK_TAMPING",
+    "description": "Plain Track Tamping on SEC-05-DN between ECH and FXT",
+    "station_from": "ECH",
+    "station_to": "FXT",
+    "track_segment_id": "SEC-05-DN",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-10T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "DGS-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0011",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "INSULATOR_WASHING",
+    "description": "Insulator Washing on SEC-01-UP between BRV and ALP",
+    "station_from": "BRV",
+    "station_to": "ALP",
+    "track_segment_id": "SEC-01-UP",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-11T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ALP-BRV-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0012",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "TRACK_CIRCUIT_BONDING",
+    "description": "Track Circuit Bonding on SEC-01-DN between ALP and BRV",
+    "station_from": "ALP",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-01-DN",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-12T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0013",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "BALLAST_CLEANING",
+    "description": "Ballast Cleaning on SEC-02-UP between CHR and BRV",
+    "station_from": "CHR",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-02-UP",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-13T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-BRV-CHR-UP",
+    "requires_speed_restriction_after": true,
+    "imposed_speed_kmh": 45,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0014",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "CANTILEVER_ADJUSTMENT",
+    "description": "Cantilever Adjustment on SEC-02-DN between BRV and CHR",
+    "station_from": "BRV",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-02-DN",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-14T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-BRV-CHR-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0015",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "EI_DATA_LOG_CHECK",
+    "description": "Ei Data Log Check on SEC-03-UP between DLT and CHR",
+    "station_from": "DLT",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-03-UP",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-15T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0016",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "RAIL_GRINDING",
+    "description": "Rail Grinding on SEC-03-DN between CHR and DLT",
+    "station_from": "CHR",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-03-DN",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-16T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0017",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "OHE_REHABILITATION",
+    "description": "Ohe Rehabilitation on SEC-04-UP between ECH and DLT",
+    "station_from": "ECH",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-04-UP",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-17T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-DLT-ECH-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0018",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "AXLE_COUNTER_TESTING",
+    "description": "Axle Counter Testing on SEC-04-DN between DLT and ECH",
+    "station_from": "DLT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-04-DN",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-18T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0019",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "TURNOUT_TAMPING",
+    "description": "Turnout Tamping on SEC-05-UP between FXT and ECH",
+    "station_from": "FXT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-05-UP",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-19T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0020",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "NEUTRAL_SECTION_CHECK",
+    "description": "Neutral Section Check on SEC-05-DN between ECH and FXT",
+    "station_from": "ECH",
+    "station_to": "FXT",
+    "track_segment_id": "SEC-05-DN",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-20T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ECH-FXT-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0021",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "POINT_MACHINE_OVERHAUL",
+    "description": "Point Machine Overhaul on SEC-01-UP between BRV and ALP",
+    "station_from": "BRV",
+    "station_to": "ALP",
+    "track_segment_id": "SEC-01-UP",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-21T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0022",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "PLAIN_TRACK_TAMPING",
+    "description": "Plain Track Tamping on SEC-01-DN between ALP and BRV",
+    "station_from": "ALP",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-01-DN",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-22T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0023",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "INSULATOR_WASHING",
+    "description": "Insulator Washing on SEC-02-UP between CHR and BRV",
+    "station_from": "CHR",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-02-UP",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-23T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-BRV-CHR-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0024",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "TRACK_CIRCUIT_BONDING",
+    "description": "Track Circuit Bonding on SEC-02-DN between BRV and CHR",
+    "station_from": "BRV",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-02-DN",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-24T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0025",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "BALLAST_CLEANING",
+    "description": "Ballast Cleaning on SEC-03-UP between DLT and CHR",
+    "station_from": "DLT",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-03-UP",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-25T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "DGS-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-CHR-DLT-UP",
+    "requires_speed_restriction_after": true,
+    "imposed_speed_kmh": 45,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0026",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "CANTILEVER_ADJUSTMENT",
+    "description": "Cantilever Adjustment on SEC-03-DN between CHR and DLT",
+    "station_from": "CHR",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-03-DN",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-26T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-CHR-DLT-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0027",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "EI_DATA_LOG_CHECK",
+    "description": "Ei Data Log Check on SEC-04-UP between ECH and DLT",
+    "station_from": "ECH",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-04-UP",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-27T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0028",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "RAIL_GRINDING",
+    "description": "Rail Grinding on SEC-04-DN between DLT and ECH",
+    "station_from": "DLT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-04-DN",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-28T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0029",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "OHE_REHABILITATION",
+    "description": "Ohe Rehabilitation on SEC-05-UP between FXT and ECH",
+    "station_from": "FXT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-05-UP",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-01T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ECH-FXT-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0030",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "AXLE_COUNTER_TESTING",
+    "description": "Axle Counter Testing on SEC-05-DN between ECH and FXT",
+    "station_from": "ECH",
+    "station_to": "FXT",
+    "track_segment_id": "SEC-05-DN",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-02T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0031",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "TURNOUT_TAMPING",
+    "description": "Turnout Tamping on SEC-01-UP between BRV and ALP",
+    "station_from": "BRV",
+    "station_to": "ALP",
+    "track_segment_id": "SEC-01-UP",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-03T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0032",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "NEUTRAL_SECTION_CHECK",
+    "description": "Neutral Section Check on SEC-01-DN between ALP and BRV",
+    "station_from": "ALP",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-01-DN",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-04T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ALP-BRV-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0033",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "POINT_MACHINE_OVERHAUL",
+    "description": "Point Machine Overhaul on SEC-02-UP between CHR and BRV",
+    "station_from": "CHR",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-02-UP",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-05T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0034",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "PLAIN_TRACK_TAMPING",
+    "description": "Plain Track Tamping on SEC-02-DN between BRV and CHR",
+    "station_from": "BRV",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-02-DN",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-06T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0035",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "INSULATOR_WASHING",
+    "description": "Insulator Washing on SEC-03-UP between DLT and CHR",
+    "station_from": "DLT",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-03-UP",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-07T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-CHR-DLT-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0036",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "TRACK_CIRCUIT_BONDING",
+    "description": "Track Circuit Bonding on SEC-03-DN between CHR and DLT",
+    "station_from": "CHR",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-03-DN",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-08T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0037",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "BALLAST_CLEANING",
+    "description": "Ballast Cleaning on SEC-04-UP between ECH and DLT",
+    "station_from": "ECH",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-04-UP",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-09T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-DLT-ECH-UP",
+    "requires_speed_restriction_after": true,
+    "imposed_speed_kmh": 45,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0038",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "CANTILEVER_ADJUSTMENT",
+    "description": "Cantilever Adjustment on SEC-04-DN between DLT and ECH",
+    "station_from": "DLT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-04-DN",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-10T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-DLT-ECH-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0039",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "EI_DATA_LOG_CHECK",
+    "description": "Ei Data Log Check on SEC-05-UP between FXT and ECH",
+    "station_from": "FXT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-05-UP",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-11T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0040",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "RAIL_GRINDING",
+    "description": "Rail Grinding on SEC-05-DN between ECH and FXT",
+    "station_from": "ECH",
+    "station_to": "FXT",
+    "track_segment_id": "SEC-05-DN",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-12T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "DGS-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0041",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "OHE_REHABILITATION",
+    "description": "Ohe Rehabilitation on SEC-01-UP between BRV and ALP",
+    "station_from": "BRV",
+    "station_to": "ALP",
+    "track_segment_id": "SEC-01-UP",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-13T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ALP-BRV-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0042",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "AXLE_COUNTER_TESTING",
+    "description": "Axle Counter Testing on SEC-01-DN between ALP and BRV",
+    "station_from": "ALP",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-01-DN",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-14T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0043",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "TURNOUT_TAMPING",
+    "description": "Turnout Tamping on SEC-02-UP between CHR and BRV",
+    "station_from": "CHR",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-02-UP",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-15T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0044",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "NEUTRAL_SECTION_CHECK",
+    "description": "Neutral Section Check on SEC-02-DN between BRV and CHR",
+    "station_from": "BRV",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-02-DN",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-16T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-BRV-CHR-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0045",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "POINT_MACHINE_OVERHAUL",
+    "description": "Point Machine Overhaul on SEC-03-UP between DLT and CHR",
+    "station_from": "DLT",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-03-UP",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-17T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0046",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "PLAIN_TRACK_TAMPING",
+    "description": "Plain Track Tamping on SEC-03-DN between CHR and DLT",
+    "station_from": "CHR",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-03-DN",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-18T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0047",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "INSULATOR_WASHING",
+    "description": "Insulator Washing on SEC-04-UP between ECH and DLT",
+    "station_from": "ECH",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-04-UP",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-19T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-DLT-ECH-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0048",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "TRACK_CIRCUIT_BONDING",
+    "description": "Track Circuit Bonding on SEC-04-DN between DLT and ECH",
+    "station_from": "DLT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-04-DN",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-20T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0049",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "BALLAST_CLEANING",
+    "description": "Ballast Cleaning on SEC-05-UP between FXT and ECH",
+    "station_from": "FXT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-05-UP",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-21T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ECH-FXT-UP",
+    "requires_speed_restriction_after": true,
+    "imposed_speed_kmh": 45,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0050",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "CANTILEVER_ADJUSTMENT",
+    "description": "Cantilever Adjustment on SEC-05-DN between ECH and FXT",
+    "station_from": "ECH",
+    "station_to": "FXT",
+    "track_segment_id": "SEC-05-DN",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-22T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ECH-FXT-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0051",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "EI_DATA_LOG_CHECK",
+    "description": "Ei Data Log Check on SEC-01-UP between BRV and ALP",
+    "station_from": "BRV",
+    "station_to": "ALP",
+    "track_segment_id": "SEC-01-UP",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-23T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0052",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "RAIL_GRINDING",
+    "description": "Rail Grinding on SEC-01-DN between ALP and BRV",
+    "station_from": "ALP",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-01-DN",
+    "chainage_start_km": 1.0,
+    "chainage_end_km": 3.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-24T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "BCM-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0053",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "OHE_REHABILITATION",
+    "description": "Ohe Rehabilitation on SEC-02-UP between CHR and BRV",
+    "station_from": "CHR",
+    "station_to": "BRV",
+    "track_segment_id": "SEC-02-UP",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 240,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-25T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-BRV-CHR-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0054",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "AXLE_COUNTER_TESTING",
+    "description": "Axle Counter Testing on SEC-02-DN between BRV and CHR",
+    "station_from": "BRV",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-02-DN",
+    "chainage_start_km": 23.5,
+    "chainage_end_km": 26.0,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-26T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0055",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "TURNOUT_TAMPING",
+    "description": "Turnout Tamping on SEC-03-UP between DLT and CHR",
+    "station_from": "DLT",
+    "station_to": "CHR",
+    "track_segment_id": "SEC-03-UP",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-27T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "DGS-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0056",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "NEUTRAL_SECTION_CHECK",
+    "description": "Neutral Section Check on SEC-03-DN between CHR and DLT",
+    "station_from": "CHR",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-03-DN",
+    "chainage_start_km": 49.0,
+    "chainage_end_km": 51.5,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_1_MANDATORY",
+    "deadline_utc": "2026-10-28T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-CHR-DLT-DN",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0057",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "POINT_MACHINE_OVERHAUL",
+    "description": "Point Machine Overhaul on SEC-04-UP between ECH and DLT",
+    "station_from": "ECH",
+    "station_to": "DLT",
+    "track_segment_id": "SEC-04-UP",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-01T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-01",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ENG-0058",
+    "department": "ENGINEERING",
+    "sub_department": "PWAY",
+    "work_type": "PLAIN_TRACK_TAMPING",
+    "description": "Plain Track Tamping on SEC-04-DN between DLT and ECH",
+    "station_from": "DLT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-04-DN",
+    "chainage_start_km": 74.2,
+    "chainage_end_km": 76.7,
+    "duration_minutes": 150,
+    "setup_buffer_minutes": 30,
+    "restoration_buffer_minutes": 30,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-02T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "CSM-01",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-PWAY-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-ELE-0059",
+    "department": "ELECTRICAL",
+    "sub_department": "TRD",
+    "work_type": "INSULATOR_WASHING",
+    "description": "Insulator Washing on SEC-05-UP between FXT and ECH",
+    "station_from": "FXT",
+    "station_to": "ECH",
+    "track_segment_id": "SEC-05-UP",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_3_CYCLIC",
+    "deadline_utc": "2026-10-03T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "MACHINE",
+        "resource_id": "TW-02",
+        "quantity": 1
+      },
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-TRD-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": true,
+    "power_block_elementary_section": "ES-ECH-FXT-UP",
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  },
+  {
+    "business_key": "TASK-SIG-0060",
+    "department": "SIGNALLING",
+    "sub_department": "S&T",
+    "work_type": "TRACK_CIRCUIT_BONDING",
+    "description": "Track Circuit Bonding on SEC-05-DN between ECH and FXT",
+    "station_from": "ECH",
+    "station_to": "FXT",
+    "track_segment_id": "SEC-05-DN",
+    "chainage_start_km": 97.8,
+    "chainage_end_km": 100.3,
+    "duration_minutes": 90,
+    "setup_buffer_minutes": 15,
+    "restoration_buffer_minutes": 15,
+    "criticality": "TIER_2_SPEED_RESTRICTION",
+    "deadline_utc": "2026-10-04T23:59:59+00:00",
+    "required_resources": [
+      {
+        "resource_type": "CREW",
+        "resource_id": "GANG-SIG-02",
+        "quantity": 1
+      }
+    ],
+    "requires_power_block": false,
+    "power_block_elementary_section": null,
+    "requires_speed_restriction_after": false,
+    "imposed_speed_kmh": null,
+    "provenance_mode": "TEST"
+  }
+]

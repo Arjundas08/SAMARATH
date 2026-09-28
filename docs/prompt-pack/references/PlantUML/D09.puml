@@ -1,0 +1,23 @@
+@startuml
+skinparam dpi 180
+title D09 - Evidence-aware compatibility
+start
+:Resolve versioned geography and applicable rules;
+if (Required evidence complete?) then (yes)
+ :Check pairwise constraints;
+ if (Any prohibited interaction?) then (yes)
+  :PROHIBITED with reason;
+  stop
+ else (no)
+  :Check whole-package phases, resources and restoration;
+  if (Package passes all required checks?) then (yes)
+   :ALLOWED with rule/evidence versions;
+  else (no)
+   :PROHIBITED or UNKNOWN with exact reason;
+  endif
+ endif
+else (no)
+ :UNKNOWN - verify;
+endif
+stop
+@enduml

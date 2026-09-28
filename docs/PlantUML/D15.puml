@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D15 - Durable event and job processing
+rectangle "Input transaction" as n0
+rectangle "Revision + outbox row" as n1
+rectangle "Dispatcher / dedup / debounce" as n2
+rectangle "Job table: SKIP LOCKED lease" as n3
+rectangle "Worker + heartbeat + fencing" as n4
+rectangle "Unique result publication" as n5
+rectangle "Bounded retry / quarantine" as n6
+n0 --> n1 : atomic
+n1 --> n2 : dispatch
+n2 --> n3 : coalesce
+n3 --> n4 : claim
+n4 --> n5 : current token
+n4 --> n6 : failure
+@enduml

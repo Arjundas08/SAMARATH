@@ -1,0 +1,21 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+hide empty description
+title D12 - Task data
+
+ state "DRAFT" as TD
+ state "VALIDATION_PENDING" as TV
+ state "ELIGIBLE" as TE
+ state "QUARANTINED" as TQ
+ state "DEFERRED / CANCELLED" as TX
+ TD --> TV
+ TV --> TE : valid
+ TV --> TQ : incomplete / invalid
+ TE --> TX : authorized decision
+ TQ --> TV : corrected revision
+@enduml

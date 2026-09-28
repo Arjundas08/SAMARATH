@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D19 - Cross-domain geography
+rectangle "Engineering: track + chainage" as n0
+rectangle "S&T: point + affected routes" as n1
+rectangle "TRD: electrical section" as n2
+rectangle "Versioned mapping relations" as n3
+rectangle "Track / route / isolation resources" as n4
+rectangle "Setup + work + restoration footprint" as n5
+rectangle "Conflict and compatibility checks" as n6
+n0 --> n3 : map
+n1 --> n3 : map
+n2 --> n3 : map
+n3 --> n4 : validated topology
+n4 --> n5 : affected resources
+n5 --> n6 : overlap + evidence
+@enduml

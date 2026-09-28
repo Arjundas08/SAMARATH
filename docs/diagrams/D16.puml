@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D16 - Trust and security boundaries
+rectangle "Untrusted upload / browser" as n0
+rectangle "TLS + session + CSRF gate" as n1
+rectangle "Validation + scoped policy" as n2
+rectangle "Least-privilege DB / RLS" as n3
+rectangle "Immutable evidence + audit" as n4
+rectangle "Admin: infrastructure only" as n5
+rectangle "External Railway authority" as n6
+n0 --> n1 : request
+n1 --> n2 : authenticated
+n2 --> n3 : authorized
+n3 --> n4 : transaction
+n5 --> n4 : audited admin
+n6 --> n2 : observations only
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D05 - End-to-end planning workflow
+rectangle "Verify demand + readiness" as n0
+rectangle "Monthly allocation" as n1
+rectangle "Weekly solve + check" as n2
+rectangle "Human review / re-solve" as n3
+rectangle "Programme approval" as n4
+rectangle "External execution process" as n5
+rectangle "Feedback + actual metrics" as n6
+n0 --> n1 : eligible
+n1 --> n2 : parent version
+n2 --> n3 : valid proposal
+n3 --> n4 : current evidence
+n4 --> n5 : proposal handoff
+n5 --> n6 : authorized actuals
+@enduml

@@ -1,0 +1,57 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+hide empty description
+title D12 - Independent lifecycle domains
+state "Task data" as Task {
+ state "DRAFT" as TD
+ state "VALIDATION_PENDING" as TV
+ state "ELIGIBLE" as TE
+ state "QUARANTINED" as TQ
+ state "DEFERRED / CANCELLED" as TX
+ TD --> TV
+ TV --> TE : valid
+ TV --> TQ : incomplete / invalid
+ TE --> TX : authorized decision
+ TQ --> TV : corrected revision
+}
+state "Plan version" as Plan {
+ state "DRAFT" as PD
+ state "SOLVING" as PS
+ state "PROPOSED" as PP
+ state "MODEL_VALIDATED" as PV
+ state "HUMAN_REVIEWED" as PR
+ state "PROGRAMME_APPROVED" as PA
+ state "INFEASIBLE / NO_SOLUTION" as PN
+ state "INVALID" as PI
+ state "REJECTED / SUPERSEDED" as PX
+ PD --> PS
+ PS --> PP : incumbent
+ PS --> PN : no usable solution
+ PP --> PV : independent pass
+ PP --> PI : independent fail
+ PV --> PR : current evidence
+ PR --> PA : delegated approval
+ PR --> PX : reject / replace
+}
+state "Railway authority mirror" as Authority {
+ state "UNKNOWN" as AU
+ state "REPORTED_GRANTED" as AG
+ state "REPORTED_IN_EXECUTION" as AX
+ state "REPORTED_RESTORATION_PENDING" as AT
+ state "REPORTED_RELEASED" as AR
+ AU --> AG : authorized observation
+ AG --> AX : authorized observation
+ AX --> AT : authorized observation
+ AT --> AR : authorized observation
+}
+note bottom of Plan
+ Applicability FRESH / STALE / BLOCKED is separate.
+ Approval does not grant operational authority.
+ Emergency cases never bypass these controls.
+end note
+@enduml

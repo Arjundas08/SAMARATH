@@ -1,0 +1,112 @@
+[
+  {
+    "calendar_id": "cal-BCM-01",
+    "resource_id": "BCM-01",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-14T00:00:00Z",
+    "available_end_utc": "2026-10-14T23:59:59Z",
+    "is_outage": true,
+    "outage_reason": "Scheduled Wednesday periodic overhaul"
+  },
+  {
+    "calendar_id": "cal-BCM-02",
+    "resource_id": "BCM-02",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-CSM-01",
+    "resource_id": "CSM-01",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-CSM-02",
+    "resource_id": "CSM-02",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-DGS-01",
+    "resource_id": "DGS-01",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-TW-01",
+    "resource_id": "TW-01",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-TW-02",
+    "resource_id": "TW-02",
+    "resource_type": "MACHINE",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-GANG-PWAY-01",
+    "resource_id": "GANG-PWAY-01",
+    "resource_type": "CREW",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-GANG-PWAY-02",
+    "resource_id": "GANG-PWAY-02",
+    "resource_type": "CREW",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-GANG-TRD-01",
+    "resource_id": "GANG-TRD-01",
+    "resource_type": "CREW",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  },
+  {
+    "calendar_id": "cal-GANG-SIG-01",
+    "resource_id": "GANG-SIG-01",
+    "resource_type": "CREW",
+    "corridor_code": "VKC",
+    "available_start_utc": "2026-10-12T00:00:00Z",
+    "available_end_utc": "2026-10-18T23:59:59Z",
+    "is_outage": false,
+    "outage_reason": null
+  }
+]

@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D10 - Permitted repair
+rectangle "Rejected task / reason" as n0
+rectangle "Allowlisted edits only" as n1
+rectangle "Trial snapshot + solve" as n2
+rectangle "Independent check" as n3
+rectangle "No repair: escalate" as n4
+rectangle "Review repair evidence" as n5
+rectangle "Authorized edit + fresh solve" as n6
+n0 --> n1 : diagnosis
+n1 --> n2 : bounded search
+n2 --> n3 : incumbent
+n3 --> n4 : none valid
+n3 --> n5 : valid trial
+n5 --> n6 : accept + ETag
+@enduml

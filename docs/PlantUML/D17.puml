@@ -1,0 +1,23 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D17 - Capability evolution
+rectangle "0: TEST prototype" as n0
+rectangle "1: Authorized shadow pilot" as n1
+rectangle "2: Decision-support adoption" as n2
+rectangle "3: Authorized integration" as n3
+rectangle "4: Historical ML, if useful" as n4
+rectangle "5: Boundary-coordinated scale" as n5
+n0 --> n1 : tests + access
+n1 --> n2 : pilot acceptance
+n2 --> n3 : contracts + security
+n3 --> n4 : labels + evaluation
+n3 --> n5 : governance + load
+@enduml

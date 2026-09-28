@@ -1,0 +1,27 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D13 - On-premises deployment
+rectangle "Approved user network" as n0
+rectangle "Nginx TLS boundary" as n1
+rectangle "React + FastAPI BFF" as n2
+rectangle "Keycloak" as n3
+rectangle "PostgreSQL" as n4
+rectangle "CPU worker + checker" as n5
+rectangle "Encrypted backup / audit export" as n6
+rectangle "Monitoring / restore operator" as n7
+n0 --> n1 : HTTPS
+n1 --> n2 : same origin
+n2 --> n3 : OIDC
+n2 --> n4 : least privilege
+n4 --> n5 : leased jobs
+n4 --> n6 : backup
+n5 --> n7 : metrics
+@enduml

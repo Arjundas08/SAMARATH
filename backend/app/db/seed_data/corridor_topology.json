@@ -1,0 +1,211 @@
+{
+  "corridor_code": "VKC",
+  "corridor_name": "Vadodara-Kazipet Corridor (South Central Railway)",
+  "total_length_km": 120.0,
+  "stations": [
+    {
+      "station_code": "BRC",
+      "station_name": "Vadodara Junction",
+      "chainage_km": 0.0,
+      "absolute_distance_meters": 0,
+      "total_lines": 4,
+      "has_crossover": true
+    },
+    {
+      "station_code": "RTL",
+      "station_name": "Ratlam Junction",
+      "chainage_km": 22.5,
+      "absolute_distance_meters": 22500,
+      "total_lines": 3,
+      "has_crossover": true
+    },
+    {
+      "station_code": "NAG",
+      "station_name": "Nagpur Junction",
+      "chainage_km": 48.0,
+      "absolute_distance_meters": 48000,
+      "total_lines": 4,
+      "has_crossover": true
+    },
+    {
+      "station_code": "BPQ",
+      "station_name": "Balharshah Junction",
+      "chainage_km": 73.2,
+      "absolute_distance_meters": 73200,
+      "total_lines": 3,
+      "has_crossover": true
+    },
+    {
+      "station_code": "WL",
+      "station_name": "Warangal",
+      "chainage_km": 96.8,
+      "absolute_distance_meters": 96800,
+      "total_lines": 2,
+      "has_crossover": false
+    },
+    {
+      "station_code": "KZJ",
+      "station_name": "Kazipet Junction",
+      "chainage_km": 120.0,
+      "absolute_distance_meters": 120000,
+      "total_lines": 4,
+      "has_crossover": true
+    }
+  ],
+  "track_segments": [
+    {
+      "segment_id": "SEC-01-UP",
+      "station_from": "RTL",
+      "station_to": "BRC",
+      "direction": "UP",
+      "chainage_start_km": 0.0,
+      "chainage_end_km": 22.5,
+      "length_meters": 22500,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-BRC-RTL-UP"
+    },
+    {
+      "segment_id": "SEC-01-DN",
+      "station_from": "BRC",
+      "station_to": "RTL",
+      "direction": "DOWN",
+      "chainage_start_km": 0.0,
+      "chainage_end_km": 22.5,
+      "length_meters": 22500,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-BRC-RTL-DN"
+    },
+    {
+      "segment_id": "SEC-02-UP",
+      "station_from": "NAG",
+      "station_to": "RTL",
+      "direction": "UP",
+      "chainage_start_km": 22.5,
+      "chainage_end_km": 48.0,
+      "length_meters": 25500,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-RTL-NAG-UP"
+    },
+    {
+      "segment_id": "SEC-02-DN",
+      "station_from": "RTL",
+      "station_to": "NAG",
+      "direction": "DOWN",
+      "chainage_start_km": 22.5,
+      "chainage_end_km": 48.0,
+      "length_meters": 25500,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-RTL-NAG-DN"
+    },
+    {
+      "segment_id": "SEC-03-UP",
+      "station_from": "BPQ",
+      "station_to": "NAG",
+      "direction": "UP",
+      "chainage_start_km": 48.0,
+      "chainage_end_km": 73.2,
+      "length_meters": 25200,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-NAG-BPQ-UP"
+    },
+    {
+      "segment_id": "SEC-03-DN",
+      "station_from": "NAG",
+      "station_to": "BPQ",
+      "direction": "DOWN",
+      "chainage_start_km": 48.0,
+      "chainage_end_km": 73.2,
+      "length_meters": 25200,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-NAG-BPQ-DN"
+    },
+    {
+      "segment_id": "SEC-04-UP",
+      "station_from": "WL",
+      "station_to": "BPQ",
+      "direction": "UP",
+      "chainage_start_km": 73.2,
+      "chainage_end_km": 96.8,
+      "length_meters": 23599,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-BPQ-WL-UP"
+    },
+    {
+      "segment_id": "SEC-04-DN",
+      "station_from": "BPQ",
+      "station_to": "WL",
+      "direction": "DOWN",
+      "chainage_start_km": 73.2,
+      "chainage_end_km": 96.8,
+      "length_meters": 23599,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-BPQ-WL-DN"
+    },
+    {
+      "segment_id": "SEC-05-UP",
+      "station_from": "KZJ",
+      "station_to": "WL",
+      "direction": "UP",
+      "chainage_start_km": 96.8,
+      "chainage_end_km": 120.0,
+      "length_meters": 23200,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-WL-KZJ-UP"
+    },
+    {
+      "segment_id": "SEC-05-DN",
+      "station_from": "WL",
+      "station_to": "KZJ",
+      "direction": "DOWN",
+      "chainage_start_km": 96.8,
+      "chainage_end_km": 120.0,
+      "length_meters": 23200,
+      "max_permissible_speed_kmh": 130,
+      "elementary_section_id": "ES-WL-KZJ-DN"
+    }
+  ],
+  "elementary_sections": [
+    {
+      "elementary_section_id": "ES-BRC-RTL-01",
+      "substation_id": "TSS-BRC",
+      "chainage_start_km": 0.0,
+      "chainage_end_km": 22.5,
+      "is_neutral_section": false
+    },
+    {
+      "elementary_section_id": "ES-RTL-NAG-01",
+      "substation_id": "TSS-BRC",
+      "chainage_start_km": 22.5,
+      "chainage_end_km": 48.0,
+      "is_neutral_section": false
+    },
+    {
+      "elementary_section_id": "ES-NAG-SP-NEUTRAL",
+      "substation_id": "SP-NAG",
+      "chainage_start_km": 47.8,
+      "chainage_end_km": 48.2,
+      "is_neutral_section": true
+    },
+    {
+      "elementary_section_id": "ES-NAG-BPQ-01",
+      "substation_id": "TSS-BPQ",
+      "chainage_start_km": 48.0,
+      "chainage_end_km": 73.2,
+      "is_neutral_section": false
+    },
+    {
+      "elementary_section_id": "ES-BPQ-WL-01",
+      "substation_id": "TSS-BPQ",
+      "chainage_start_km": 73.2,
+      "chainage_end_km": 96.8,
+      "is_neutral_section": false
+    },
+    {
+      "elementary_section_id": "ES-WL-KZJ-01",
+      "substation_id": "TSS-KZJ",
+      "chainage_start_km": 96.8,
+      "chainage_end_km": 120.0,
+      "is_neutral_section": false
+    }
+  ]
+}

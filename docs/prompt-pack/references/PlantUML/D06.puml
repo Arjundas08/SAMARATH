@@ -1,0 +1,27 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D06 - Monthly-to-weekly consistency
+rectangle "Monthly snapshot" as n0
+rectangle "Capacity budgets + commitments" as n1
+rectangle "Monthly allocation version" as n2
+rectangle "Latest weekly snapshot" as n3
+rectangle "Detailed weekly planner" as n4
+rectangle "Parent reconciliation" as n5
+rectangle "Weekly proposal" as n6
+rectangle "Amendment required" as n7
+n0 --> n2 : demand
+n1 --> n2 : capacity
+n2 --> n4 : parent
+n3 --> n4 : detail
+n4 --> n5 : assignments
+n5 --> n6 : consistent
+n5 --> n7 : changed allocation
+@enduml

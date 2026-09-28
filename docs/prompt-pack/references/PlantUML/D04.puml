@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D04 - Login and scope
+rectangle "Browser" as n0
+rectangle "BFF / server session" as n1
+rectangle "Keycloak OIDC" as n2
+rectangle "Token + claim validation" as n3
+rectangle "Role / territory policy" as n4
+rectangle "Scoped action + RLS" as n5
+rectangle "Audit event" as n6
+n0 --> n1 : login
+n1 --> n2 : code + PKCE
+n2 --> n3 : verified claims
+n3 --> n4 : identity
+n4 --> n5 : authorize
+n5 --> n6 : record
+@enduml

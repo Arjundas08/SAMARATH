@@ -1,0 +1,22 @@
+@startuml
+skinparam dpi 180
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+title D08 - Solve and independently check
+participant "API" as p0
+participant "Job worker" as p1
+participant "CP-SAT" as p2
+participant "Checker" as p3
+participant "Database" as p4
+p0 -> p4 : Snapshot + queued job + audit
+p1 -> p4 : Claim lease / fencing token
+p4 -> p1 : Frozen raw inputs + rules
+p1 -> p2 : Candidate model + stage budget
+p2 -> p1 : Status + incumbent or diagnostics
+p1 -> p3 : Raw snapshot + materialized\nassignments
+p3 -> p1 : VALID / INVALID + exact violations
+p1 -> p4 : If valid: current fence + unique\nresult
+p0 -> p4 : Read result and applicability gates
+@enduml

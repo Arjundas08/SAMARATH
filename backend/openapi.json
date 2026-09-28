@@ -1,0 +1,1237 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SAMARATH - Railway Block Planning API",
+    "description": "System for Automated Maintenance Allocation, Rolling Availability, and Track Harmony (SIH26027)",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Get System Health",
+        "description": "Health check endpoint.\nDistinguishes a reachable FastAPI process from a functioning database connection.",
+        "operationId": "get_system_health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Login",
+        "description": "Authenticate user and set secure HttpOnly session cookie and CSRF cookie.\nNever exposes raw tokens in response body for localStorage.",
+        "operationId": "login_api_v1_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Logout",
+        "description": "Terminates session by clearing authentication and CSRF cookies.",
+        "operationId": "logout_api_v1_auth_logout_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/session": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Get Session",
+        "description": "Returns current authenticated session details.",
+        "operationId": "get_session_api_v1_auth_session_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tasks": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Create Task",
+        "description": "Ingest and validate an engineering maintenance demand.\nEnforces total_block_minutes calculation and schema validation.",
+        "operationId": "create_task_api_v1_tasks_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/snapshots": {
+      "post": {
+        "tags": [
+          "Snapshots"
+        ],
+        "summary": "Create Snapshot",
+        "description": "Creates and seals an immutable Snapshot container.\nComputes deterministic SHA-256 hash over canonical ordered entities.",
+        "operationId": "create_snapshot_api_v1_snapshots_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Snapshot"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Snapshot"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/snapshots/verify-hash": {
+      "post": {
+        "tags": [
+          "Snapshots"
+        ],
+        "summary": "Verify Snapshot Hash",
+        "description": "Verifies that the snapshot hash exactly matches the canonical computed digest.",
+        "operationId": "verify_snapshot_hash_api_v1_snapshots_verify_hash_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Snapshot"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/protected/plans/{plan_id}/approve": {
+      "post": {
+        "tags": [
+          "RBAC Guards"
+        ],
+        "summary": "Approve Plan Action",
+        "description": "Action requiring delegated operational programme approval authority.\nMust succeed for DELEGATED_APPROVER, and fail (403) for INFRASTRUCTURE_ADMIN and DEPARTMENT_PLANNER.",
+        "operationId": "approve_plan_action_api_v1_protected_plans__plan_id__approve_post",
+        "parameters": [
+          {
+            "name": "plan_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Plan Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/protected/departments/{department}/demands": {
+      "post": {
+        "tags": [
+          "RBAC Guards"
+        ],
+        "summary": "Create Departmental Demand",
+        "description": "Action enforcing departmental isolation.",
+        "operationId": "create_departmental_demand_api_v1_protected_departments__department__demands_post",
+        "parameters": [
+          {
+            "name": "department",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/DepartmentType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Root"
+        ],
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CriticalityTier": {
+        "type": "string",
+        "enum": [
+          "TIER_1_MANDATORY",
+          "TIER_2_SPEED_RESTRICTION",
+          "TIER_3_CYCLIC"
+        ],
+        "title": "CriticalityTier"
+      },
+      "DatabaseHealth": {
+        "properties": {
+          "connected": {
+            "type": "boolean",
+            "title": "Connected"
+          },
+          "engine": {
+            "type": "string",
+            "title": "Engine"
+          },
+          "latency_ms": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latency Ms"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "connected",
+          "engine"
+        ],
+        "title": "DatabaseHealth"
+      },
+      "DemandStatus": {
+        "type": "string",
+        "enum": [
+          "DRAFT",
+          "SUBMITTED",
+          "VALIDATED",
+          "WITHDRAWN",
+          "SUPERSEDED"
+        ],
+        "title": "DemandStatus"
+      },
+      "DepartmentType": {
+        "type": "string",
+        "enum": [
+          "ENGINEERING",
+          "SIGNALLING",
+          "ELECTRICAL"
+        ],
+        "title": "DepartmentType"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "'healthy' or 'degraded'"
+          },
+          "app_name": {
+            "type": "string",
+            "title": "App Name",
+            "default": "SAMARATH"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "0.1.0"
+          },
+          "process": {
+            "type": "string",
+            "title": "Process",
+            "default": "reachable"
+          },
+          "database": {
+            "$ref": "#/components/schemas/DatabaseHealth"
+          },
+          "timestamp_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp Utc"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "database"
+        ],
+        "title": "HealthResponse"
+      },
+      "LockedCommitment": {
+        "properties": {
+          "commitment_id": {
+            "type": "string",
+            "title": "Commitment Id"
+          },
+          "task_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Task Id"
+          },
+          "track_segment_id": {
+            "type": "string",
+            "title": "Track Segment Id"
+          },
+          "start_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Start Utc"
+          },
+          "end_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "End Utc"
+          },
+          "locked_by": {
+            "type": "string",
+            "title": "Locked By"
+          },
+          "lock_reason": {
+            "type": "string",
+            "title": "Lock Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "commitment_id",
+          "task_id",
+          "track_segment_id",
+          "start_utc",
+          "end_utc",
+          "locked_by",
+          "lock_reason"
+        ],
+        "title": "LockedCommitment"
+      },
+      "LoginRequest": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "maxLength": 50,
+            "minLength": 3,
+            "title": "Username"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 4,
+            "title": "Password"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "LoginRequest"
+      },
+      "Permission": {
+        "type": "string",
+        "enum": [
+          "DEMAND_READ",
+          "DEMAND_CREATE",
+          "DEMAND_MUTATE",
+          "TIMETABLE_READ",
+          "TIMETABLE_MUTATE",
+          "SOLVE_TRIGGER",
+          "PROGRAMME_REVIEW",
+          "PROGRAMME_APPROVE",
+          "RULE_EDIT",
+          "RULE_APPROVE",
+          "AUDIT_READ",
+          "SYSTEM_ADMIN"
+        ],
+        "title": "Permission"
+      },
+      "PreferredWindow": {
+        "properties": {
+          "window_start_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window Start Utc"
+          },
+          "window_end_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Window End Utc"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "window_start_utc",
+          "window_end_utc"
+        ],
+        "title": "PreferredWindow"
+      },
+      "ProvenanceMode": {
+        "type": "string",
+        "enum": [
+          "TEST",
+          "SYNTHETIC_SCENARIO",
+          "AUTHORIZED_IMPORT"
+        ],
+        "title": "ProvenanceMode"
+      },
+      "ResourceCalendarEntry": {
+        "properties": {
+          "entry_id": {
+            "type": "string",
+            "title": "Entry Id"
+          },
+          "resource_id": {
+            "type": "string",
+            "title": "Resource Id"
+          },
+          "resource_type": {
+            "type": "string",
+            "title": "Resource Type"
+          },
+          "available_start_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Available Start Utc"
+          },
+          "available_end_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Available End Utc"
+          },
+          "is_outage": {
+            "type": "boolean",
+            "title": "Is Outage",
+            "default": false
+          },
+          "outage_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outage Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "entry_id",
+          "resource_id",
+          "resource_type",
+          "available_start_utc",
+          "available_end_utc"
+        ],
+        "title": "ResourceCalendarEntry"
+      },
+      "ResourceRequirement": {
+        "properties": {
+          "resource_type": {
+            "$ref": "#/components/schemas/ResourceType"
+          },
+          "resource_id": {
+            "type": "string",
+            "title": "Resource Id",
+            "description": "Unique machine ID or gang identifier"
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Quantity",
+            "default": 1
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "resource_type",
+          "resource_id"
+        ],
+        "title": "ResourceRequirement"
+      },
+      "ResourceType": {
+        "type": "string",
+        "enum": [
+          "MACHINE",
+          "CREW",
+          "SPECIAL_EQUIPMENT"
+        ],
+        "title": "ResourceType"
+      },
+      "SessionResponse": {
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "title": "User Id"
+          },
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/UserRole"
+            },
+            "type": "array",
+            "title": "Roles"
+          },
+          "permissions": {
+            "items": {
+              "$ref": "#/components/schemas/Permission"
+            },
+            "type": "array",
+            "title": "Permissions"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "territory": {
+            "type": "string",
+            "title": "Territory",
+            "default": "VKC"
+          },
+          "csrf_token": {
+            "type": "string",
+            "title": "Csrf Token"
+          },
+          "is_authenticated": {
+            "type": "boolean",
+            "title": "Is Authenticated",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "user_id",
+          "username",
+          "display_name",
+          "roles",
+          "permissions",
+          "csrf_token"
+        ],
+        "title": "SessionResponse"
+      },
+      "Snapshot": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Snapshot Id"
+          },
+          "corridor_code": {
+            "type": "string",
+            "title": "Corridor Code",
+            "default": "VKC"
+          },
+          "horizon_start_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Horizon Start Utc"
+          },
+          "horizon_end_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Horizon End Utc"
+          },
+          "provenance_mode": {
+            "$ref": "#/components/schemas/ProvenanceMode",
+            "default": "TEST"
+          },
+          "tasks": {
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "type": "array",
+            "title": "Tasks"
+          },
+          "train_occupations": {
+            "items": {
+              "$ref": "#/components/schemas/TrainOccupation"
+            },
+            "type": "array",
+            "title": "Train Occupations"
+          },
+          "resource_calendars": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceCalendarEntry"
+            },
+            "type": "array",
+            "title": "Resource Calendars"
+          },
+          "locked_commitments": {
+            "items": {
+              "$ref": "#/components/schemas/LockedCommitment"
+            },
+            "type": "array",
+            "title": "Locked Commitments"
+          },
+          "snapshot_hash": {
+            "type": "string",
+            "title": "Snapshot Hash",
+            "default": ""
+          },
+          "is_sealed": {
+            "type": "boolean",
+            "title": "Is Sealed",
+            "default": true
+          },
+          "created_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At Utc"
+          },
+          "created_by": {
+            "type": "string",
+            "title": "Created By",
+            "default": "system"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "horizon_start_utc",
+          "horizon_end_utc"
+        ],
+        "title": "Snapshot"
+      },
+      "Task": {
+        "properties": {
+          "business_key": {
+            "type": "string",
+            "title": "Business Key",
+            "description": "Human-readable business key, e.g., TASK-TMS-0012"
+          },
+          "department": {
+            "$ref": "#/components/schemas/DepartmentType"
+          },
+          "sub_department": {
+            "type": "string",
+            "title": "Sub Department"
+          },
+          "work_type": {
+            "type": "string",
+            "title": "Work Type"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "station_from": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Station From"
+          },
+          "station_to": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Station To"
+          },
+          "track_segment_id": {
+            "type": "string",
+            "title": "Track Segment Id"
+          },
+          "chainage_start_km": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Chainage Start Km"
+          },
+          "chainage_end_km": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Chainage End Km"
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "minimum": 15.0,
+            "title": "Duration Minutes",
+            "description": "Net physical productive work time in minutes"
+          },
+          "setup_buffer_minutes": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Setup Buffer Minutes",
+            "description": "Pre-work possession and machine positioning buffer",
+            "default": 30
+          },
+          "restoration_buffer_minutes": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Restoration Buffer Minutes",
+            "description": "Post-work track testing and clearance buffer",
+            "default": 30
+          },
+          "criticality": {
+            "$ref": "#/components/schemas/CriticalityTier",
+            "default": "TIER_3_CYCLIC"
+          },
+          "deadline_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Deadline Utc"
+          },
+          "preferred_windows": {
+            "items": {
+              "$ref": "#/components/schemas/PreferredWindow"
+            },
+            "type": "array",
+            "title": "Preferred Windows"
+          },
+          "required_resources": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceRequirement"
+            },
+            "type": "array",
+            "title": "Required Resources"
+          },
+          "requires_power_block": {
+            "type": "boolean",
+            "title": "Requires Power Block",
+            "default": false
+          },
+          "power_block_elementary_section": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Block Elementary Section"
+          },
+          "requires_speed_restriction_after": {
+            "type": "boolean",
+            "title": "Requires Speed Restriction After",
+            "default": false
+          },
+          "imposed_speed_kmh": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Imposed Speed Kmh"
+          },
+          "provenance_mode": {
+            "$ref": "#/components/schemas/ProvenanceMode",
+            "default": "TEST"
+          },
+          "task_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Task Id"
+          },
+          "total_block_minutes": {
+            "type": "integer",
+            "title": "Total Block Minutes",
+            "description": "Sum of duration + setup + restoration"
+          },
+          "demand_status": {
+            "$ref": "#/components/schemas/DemandStatus",
+            "default": "VALIDATED"
+          },
+          "created_at_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At Utc"
+          },
+          "created_by": {
+            "type": "string",
+            "title": "Created By",
+            "default": "system"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "business_key",
+          "department",
+          "sub_department",
+          "work_type",
+          "description",
+          "station_from",
+          "station_to",
+          "track_segment_id",
+          "chainage_start_km",
+          "chainage_end_km",
+          "duration_minutes",
+          "deadline_utc",
+          "total_block_minutes"
+        ],
+        "title": "Task"
+      },
+      "TaskCreate": {
+        "properties": {
+          "business_key": {
+            "type": "string",
+            "title": "Business Key",
+            "description": "Human-readable business key, e.g., TASK-TMS-0012"
+          },
+          "department": {
+            "$ref": "#/components/schemas/DepartmentType"
+          },
+          "sub_department": {
+            "type": "string",
+            "title": "Sub Department"
+          },
+          "work_type": {
+            "type": "string",
+            "title": "Work Type"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "station_from": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Station From"
+          },
+          "station_to": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Station To"
+          },
+          "track_segment_id": {
+            "type": "string",
+            "title": "Track Segment Id"
+          },
+          "chainage_start_km": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Chainage Start Km"
+          },
+          "chainage_end_km": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Chainage End Km"
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "minimum": 15.0,
+            "title": "Duration Minutes",
+            "description": "Net physical productive work time in minutes"
+          },
+          "setup_buffer_minutes": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Setup Buffer Minutes",
+            "description": "Pre-work possession and machine positioning buffer",
+            "default": 30
+          },
+          "restoration_buffer_minutes": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Restoration Buffer Minutes",
+            "description": "Post-work track testing and clearance buffer",
+            "default": 30
+          },
+          "criticality": {
+            "$ref": "#/components/schemas/CriticalityTier",
+            "default": "TIER_3_CYCLIC"
+          },
+          "deadline_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Deadline Utc"
+          },
+          "preferred_windows": {
+            "items": {
+              "$ref": "#/components/schemas/PreferredWindow"
+            },
+            "type": "array",
+            "title": "Preferred Windows"
+          },
+          "required_resources": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceRequirement"
+            },
+            "type": "array",
+            "title": "Required Resources"
+          },
+          "requires_power_block": {
+            "type": "boolean",
+            "title": "Requires Power Block",
+            "default": false
+          },
+          "power_block_elementary_section": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Power Block Elementary Section"
+          },
+          "requires_speed_restriction_after": {
+            "type": "boolean",
+            "title": "Requires Speed Restriction After",
+            "default": false
+          },
+          "imposed_speed_kmh": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Imposed Speed Kmh"
+          },
+          "provenance_mode": {
+            "$ref": "#/components/schemas/ProvenanceMode",
+            "default": "TEST"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "business_key",
+          "department",
+          "sub_department",
+          "work_type",
+          "description",
+          "station_from",
+          "station_to",
+          "track_segment_id",
+          "chainage_start_km",
+          "chainage_end_km",
+          "duration_minutes",
+          "deadline_utc"
+        ],
+        "title": "TaskCreate"
+      },
+      "TrainOccupation": {
+        "properties": {
+          "occupation_id": {
+            "type": "string",
+            "title": "Occupation Id"
+          },
+          "train_number": {
+            "type": "string",
+            "title": "Train Number"
+          },
+          "train_type": {
+            "type": "string",
+            "title": "Train Type"
+          },
+          "track_segment_id": {
+            "type": "string",
+            "title": "Track Segment Id"
+          },
+          "entry_time_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Entry Time Utc"
+          },
+          "exit_time_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Exit Time Utc"
+          },
+          "start_minute": {
+            "type": "integer",
+            "title": "Start Minute"
+          },
+          "end_minute": {
+            "type": "integer",
+            "title": "End Minute"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "occupation_id",
+          "train_number",
+          "train_type",
+          "track_segment_id",
+          "entry_time_utc",
+          "exit_time_utc",
+          "start_minute",
+          "end_minute"
+        ],
+        "title": "TrainOccupation"
+      },
+      "UserRole": {
+        "type": "string",
+        "enum": [
+          "DEPARTMENT_PLANNER",
+          "CORRIDOR_COORDINATOR",
+          "OPERATING_REVIEWER",
+          "DELEGATED_APPROVER",
+          "INTEGRATION_OPERATOR",
+          "RULE_AUTHOR",
+          "RULE_APPROVER",
+          "AUDITOR",
+          "INFRASTRUCTURE_ADMIN"
+        ],
+        "title": "UserRole"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

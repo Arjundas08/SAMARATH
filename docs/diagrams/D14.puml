@@ -1,0 +1,40 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+title D14 - Relational planning spine
+entity "DataSource / Connector" as n0 {
+ PK source_id, connector_id
+}
+entity "RecordRevision / Provenance" as n1 {
+ PK revision_id, FK source_id
+}
+entity "InputSnapshot + membership" as n2 {
+ PK snapshot_id, hash
+}
+entity "Policy / RuleVersion" as n3 {
+ PK version_id, effective_at
+}
+entity "SolverRun" as n4 {
+ PK run_id, FK snapshot_id
+}
+entity "Plan / PlanVersion" as n5 {
+ PK version_id, FK run_id
+}
+entity "Assignment / WorkPackage" as n6 {
+ PK assignment_id, FK version_id
+}
+entity "Validation / Metric / Reason" as n7 {
+ PK evidence_id, FK version_id
+}
+entity "Approval / Audit / PlanDiff" as n8 {
+ FK version_id, actor_id
+}
+n0 --> n1 : 1 to many
+n1 --> n2 : membership
+n2 --> n4 : snapshot FK
+n3 --> n4 : version FK
+n4 --> n5 : result
+n5 --> n6 : version FK
+n5 --> n7 : version FK
+n5 --> n8 : version FK
+@enduml

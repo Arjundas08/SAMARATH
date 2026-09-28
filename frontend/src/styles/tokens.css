@@ -1,0 +1,141 @@
+:root {
+  /* Signal & Slate Color Palette */
+  --color-canvas: #F4F6F8;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #FAF9F6;
+  --color-ink: #142B3E;
+  --color-muted: #526478;
+  --color-border: #D5DEE5;
+  --color-border-subtle: #E8EEF2;
+
+  /* Actions and Selection */
+  --color-action: #006D77;
+  --color-action-hover: #00565E;
+  --color-action-tint: #E6F2F2;
+
+  /* Railway Semantics */
+  --color-warning: #946200;
+  --color-warning-pale: #FFF8E7;
+  --color-critical: #B33636;
+  --color-critical-pale: #FDF2F2;
+  --color-change: #B94D2F;
+  --color-change-pale: #FBEFEA;
+  --color-success: #1E7E34;
+  --color-success-pale: #EDF7EE;
+
+  /* Department Codes */
+  --dept-eng: #0284C7;
+  --dept-ohe: #EAB308;
+  --dept-sig: #10B981;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+  /* Radii & Shadows */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --shadow-sm: 0 1px 2px 0 rgba(20, 43, 62, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(20, 43, 62, 0.08);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible focus ring across all interactive controls */
+*:focus-visible {
+  outline: 2px solid var(--color-action) !important;
+  outline-offset: 2px !important;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Accessible Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: var(--color-action);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: var(--radius-md);
+  transition: top 150ms ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom accessible scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+}

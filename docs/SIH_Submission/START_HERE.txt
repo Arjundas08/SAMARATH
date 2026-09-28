@@ -1,0 +1,8 @@
+SAMARATH | Team NIRVIKALP | SIH26027
+
+1. Edit NIRVIKALP_SAMARATH_SIH2026_Final.pptx: fill Team ID on slide 1 and demo link on slide 6.
+2. Export an updated six-slide PDF for submission. The supplied PDF still contains those placeholders.
+3. Read the illustrated technical companion and research/judge guide for preparation.
+4. Full research blueprint is included for reference, not extra portal slides.
+
+Architecture is proposed; prototype implementation has not been independently verified. The 25-minute gain is an arithmetic example, not a field measurement.

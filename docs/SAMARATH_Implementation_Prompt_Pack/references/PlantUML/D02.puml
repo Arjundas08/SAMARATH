@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D02 - Core components
+rectangle "React / TypeScript UI" as n0
+rectangle "FastAPI domain / RBAC" as n1
+rectangle "PostgreSQL snapshots + jobs" as n2
+rectangle "CP-SAT worker" as n3
+rectangle "Independent checker" as n4
+rectangle "Evidence + metrics" as n5
+n0 --> n1 : HTTPS
+n1 --> n2 : transaction
+n2 --> n3 : lease
+n2 --> n4 : raw snapshot
+n3 --> n4 : assignments
+n4 --> n5 : verdict
+n5 --> n2 : persist
+@enduml

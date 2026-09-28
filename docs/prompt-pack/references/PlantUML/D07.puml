@@ -1,0 +1,19 @@
+@startuml
+skinparam dpi 180
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+title D07 - Ingestion and provenance
+participant "Source" as p0
+participant "Gateway" as p1
+participant "Validator" as p2
+participant "Database" as p3
+p0 -> p1 : Submit authorized records + manifest
+p1 -> p2 : Validate schema, units, scope and\nprovenance
+p2 -> p1 : Return accepted records / quarantine\nreasons
+p1 -> p3 : Transaction: revisions + provenance\n+ outbox
+p3 -> p1 : Committed revision IDs
+p1 -> p3 : Freeze complete snapshot manifest
+p3 -> p1 : Snapshot ID + hash + quality state
+@enduml

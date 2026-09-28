@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D01 - System context
+rectangle "Department planners" as n0
+rectangle "Operating reviewer" as n1
+rectangle "Approving officer" as n2
+rectangle "SAMARATH planning support" as n3
+rectangle "Authorized data sources" as n4
+rectangle "Audit / evidence store" as n5
+rectangle "Railway authority process" as n6
+n0 --> n3 : needs
+n1 --> n3 : review
+n2 --> n3 : programme
+n4 --> n3 : inputs
+n3 --> n5 : evidence
+n3 --> n6 : proposal only
+@enduml

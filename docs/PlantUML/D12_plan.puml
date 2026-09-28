@@ -1,0 +1,28 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+hide empty description
+title D12 - Plan version
+
+ state "DRAFT" as PD
+ state "SOLVING" as PS
+ state "PROPOSED" as PP
+ state "MODEL_VALIDATED" as PV
+ state "HUMAN_REVIEWED" as PR
+ state "PROGRAMME_APPROVED" as PA
+ state "INFEASIBLE / NO_SOLUTION" as PN
+ state "INVALID" as PI
+ state "REJECTED / SUPERSEDED" as PX
+ PD --> PS
+ PS --> PP : incumbent
+ PS --> PN : no usable solution
+ PP --> PV : independent pass
+ PP --> PI : independent fail
+ PV --> PR : current evidence
+ PR --> PA : delegated approval
+ PR --> PX : reject / replace
+@enduml

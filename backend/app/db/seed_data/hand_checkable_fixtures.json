@@ -1,0 +1,50 @@
+{
+  "normal": {
+    "description": "Standard conflict-free single block opportunity.",
+    "task_key": "TASK-TMS-0001",
+    "expected_verdict": "VERIFIED_FEASIBLE",
+    "units": "minutes"
+  },
+  "no_benefit": {
+    "description": "Corridor traffic density too high; scheduling block incurs high delay penalty.",
+    "task_key": "TASK-TMS-HIGH-DENSITY",
+    "expected_verdict": "SUBOPTIMAL_HIGH_PENALTY",
+    "units": "delay_minutes"
+  },
+  "unknown_compatibility": {
+    "description": "Work package missing approved clearance evidence; must evaluate to UNKNOWN.",
+    "task_key": "TASK-SPECIAL-UNVERIFIED",
+    "expected_verdict": "UNKNOWN_BLOCKED",
+    "units": "boolean"
+  },
+  "impossible_mandatory_deadline": {
+    "description": "Mandatory task with statutory deadline before first available track possession.",
+    "task_key": "TASK-TMS-PAST-DEADLINE",
+    "expected_verdict": "INFEASIBILITY_PROVEN",
+    "units": "minutes"
+  },
+  "cross_midnight": {
+    "description": "Block possession spanning 23:00 to 03:30 across UTC and calendar day boundary.",
+    "task_key": "TASK-CROSS-MIDNIGHT-01",
+    "expected_verdict": "VERIFIED_FEASIBLE",
+    "units": "minutes"
+  },
+  "resource_unavailable": {
+    "description": "Required machine BCM-01 in maintenance outage; no feasible placement without substitution.",
+    "task_key": "TASK-BCM-STARVED",
+    "expected_verdict": "UNSCHEDULED_RESOURCE_STARVATION",
+    "units": "resource_capacity"
+  },
+  "partial_execution": {
+    "description": "Block granted for 180 min instead of requested 240 min; tracks partial progress.",
+    "task_key": "TASK-PARTIAL-01",
+    "expected_verdict": "PARTIAL_REVISE_ESTIMATE",
+    "units": "meters_completed"
+  },
+  "locked_conflict": {
+    "description": "Injected train path collides directly with a locked commitment; hard equality forces conflict.",
+    "task_key": "TASK-LOCKED-01",
+    "expected_verdict": "HARD_CONFLICT_DETECTED",
+    "units": "boolean"
+  }
+}

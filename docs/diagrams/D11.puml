@@ -1,0 +1,21 @@
+@startuml
+skinparam dpi 180
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+title D11 - Stable replanning
+participant "Event source" as p0
+participant "Domain API" as p1
+participant "Worker" as p2
+participant "Checker" as p3
+participant "Reviewer" as p4
+p0 -> p1 : Versioned event + idempotency key
+p1 -> p1 : Persist revision; mark applicability\nSTALE
+p1 -> p2 : Queue/coalesce affected scope
+p2 -> p2 : Preserve history/locks; re-solve\nimpact closure
+p2 -> p3 : Check new assignments against new\nsnapshot
+p3 -> p2 : Verdict + parent/lock conflicts
+p2 -> p1 : Persist new version or BLOCKED\ndiagnostic
+p1 -> p4 : PlanDiff + evidence; human decision
+@enduml

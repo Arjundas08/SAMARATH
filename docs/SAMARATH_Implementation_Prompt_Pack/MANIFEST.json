@@ -1,0 +1,411 @@
+{
+  "version": "1.0",
+  "prepared": "2026-09-26",
+  "corePhases": 20,
+  "copyReadyPrompts": 25,
+  "validation": {
+    "phaseSequence": "PASS",
+    "phaseContracts": "PASS",
+    "guideLinks": "PASS",
+    "combinedPhaseContents": "PASS",
+    "referencePdfUnchanged": "PASS"
+  },
+  "hashScope": "All pack files except this manifest; ZIP is external",
+  "files": [
+    {
+      "path": "ALL_PROMPTS.md",
+      "bytes": 105174,
+      "sha256": "98041b74bda0eac9a2b7cb22e6975700a16e827925ff15105908b776bd33d03c"
+    },
+    {
+      "path": "DESIGN_BRIEF.md",
+      "bytes": 10439,
+      "sha256": "c5ded33cc0b40304faf5ab3e6614370b8896c1af8be0762d32615790580ee1ec"
+    },
+    {
+      "path": "IMPLEMENTATION_ADDENDUM.md",
+      "bytes": 3788,
+      "sha256": "31b3aa71da5afb7ee4225df3fb4ad6d7bf97ac598ce9bcceae4603e9393785e0"
+    },
+    {
+      "path": "MASTER_PROMPT.md",
+      "bytes": 8294,
+      "sha256": "0127e8bf9fba8c8c2245604f2cb0d2a3ad5dd86014e60d8badf9c35cd58a06f5"
+    },
+    {
+      "path": "optional/20_AUTHORIZED_PILOT.md",
+      "bytes": 2682,
+      "sha256": "3187fa17c1d7aeae95ccf990c4966fa10c511a8c467d7c562bef0594f22367a3"
+    },
+    {
+      "path": "optional/21_HISTORICAL_ML.md",
+      "bytes": 2430,
+      "sha256": "57d393ddaa8d9932f1ea97cf3aa2b9d1ef1f93f60eeaa5fb5e5e6ba5d7515369"
+    },
+    {
+      "path": "phases/00_REPOSITORY_AUDIT_AND_IMPLEMENTATION_CONTRACT.md",
+      "bytes": 3377,
+      "sha256": "472095b748f0f3ff2566ed1cb6e9b8cfa0346b4b3b24e6db036d4c7be7612215"
+    },
+    {
+      "path": "phases/01_RUNNABLE_FOUNDATION_DATABASE_AND_TYPED_CONTRACTS.md",
+      "bytes": 3361,
+      "sha256": "51f8ad56942ddccdf4679c7dc58fffbd4f7f8fdc683144678617488a20d167dc"
+    },
+    {
+      "path": "phases/02_REAL_LOGIN_SCOPED_PERMISSIONS_AND_SECURE_SESSIONS.md",
+      "bytes": 3005,
+      "sha256": "a91060b3eace83470247d6a3e7bb556b09746adde22c2f79bd72dfd9093d9705"
+    },
+    {
+      "path": "phases/03_DISTINCTIVE_DESIGN_SYSTEM_AND_HONEST_APPLICATION_SHELL.md",
+      "bytes": 3119,
+      "sha256": "30fa848626e00e444c851efd3706c0181c2a8f308ca37174b3589691c656a855"
+    },
+    {
+      "path": "phases/04_INPUT_GATEWAY_FICTIONAL_CORRIDOR_AND_PROVENANCE.md",
+      "bytes": 3359,
+      "sha256": "c70c79774cc57f1022c8b9540843ba475f027454006607694b6eda3f42616d94"
+    },
+    {
+      "path": "phases/05_READINESS_COMPATIBILITY_AND_EXECUTABLE_WORK_PACKAGES.md",
+      "bytes": 3239,
+      "sha256": "1b28e986852cb22296c554ce023a1324a9ded69b888e93b3ec50993ebe98ca48"
+    },
+    {
+      "path": "phases/06_SPARSE_OPPORTUNITY_GENERATION_AND_A_CREDIBLE_BASELINE.md",
+      "bytes": 3413,
+      "sha256": "ee5703ea526afc04a4491f65a48a9edcea0bce1ead93dffc9fc3583993251a08"
+    },
+    {
+      "path": "phases/07_INDEPENDENT_FEASIBILITY_CHECKER_AND_CORRECTNESS_ORACLE.md",
+      "bytes": 3395,
+      "sha256": "ab6d6642ea3c18b7cab164723ab4ec4ec3556fe3d8f931e2558b7e8d4cc2b0c8"
+    },
+    {
+      "path": "phases/08_REAL_CP_SAT_WEEKLY_OPTIMIZER_AND_OBJECTIVE_PROFILES.md",
+      "bytes": 3431,
+      "sha256": "9092c6506e54ea976464dc53526afe1b7cade62b0b35b3b6cb0f24e81ec3a817"
+    },
+    {
+      "path": "phases/09_MONTHLY_ALLOCATION_AND_WEEKLY_RECONCILIATION.md",
+      "bytes": 3201,
+      "sha256": "f43c600b636792b7d00c592e75041cdea8d00f455abad785cc697e54a3ed1856"
+    },
+    {
+      "path": "phases/10_DURABLE_SOLVE_JOBS_AND_COMPLETE_PLANNING_APIS.md",
+      "bytes": 2923,
+      "sha256": "588936e753ab8e4ec37a14bc80e956d7ec8a3b368bb3a9e196bd6e05a2568e8f"
+    },
+    {
+      "path": "phases/11_BEAUTIFUL_OPERATIONAL_PLANNING_WORKBENCH.md",
+      "bytes": 3418,
+      "sha256": "a86f623663908356c772f58733bf27280feb10b27ac21ffae64403447dc82a2d"
+    },
+    {
+      "path": "phases/12_EVIDENCE_BACKED_WHY_WHY_NOT_AND_BOUNDED_REPAIR.md",
+      "bytes": 3362,
+      "sha256": "69ba4f08b0de0ea57ef797a0ccdcd7a9e5238f68a112e25cedfa2a5c8da62879"
+    },
+    {
+      "path": "phases/13_EVENT_DRIVEN_STABLE_REPLANNING_AND_PLANDIFF.md",
+      "bytes": 3368,
+      "sha256": "9c5171da7f98505ae10f909bdb49a2a998681dd19e365edbdcd06626d1ec8844"
+    },
+    {
+      "path": "phases/14_CALCULATED_METRICS_FAIR_COMPARISON_AND_STRESS_SCENARIOS.md",
+      "bytes": 3361,
+      "sha256": "3e11e8fd17bf1f25f60e678dedb8b2dc67d0ae3f72c5c38168c9f063d7d47481"
+    },
+    {
+      "path": "phases/15_HUMAN_REVIEW_PROGRAMME_APPROVAL_AND_AUDIT_INTEGRITY.md",
+      "bytes": 3107,
+      "sha256": "8785a27e72cb0a8b9480285f125b80d3e33bbcdc04e9cd49e6d5de801560400c"
+    },
+    {
+      "path": "phases/16_EXECUTION_FEEDBACK_PARTIAL_WORK_AND_ESTIMATE_REVIEW.md",
+      "bytes": 3137,
+      "sha256": "8df667ce4988248a247314cd176a41d81fcd00146712b22a5f552ed7d585eede"
+    },
+    {
+      "path": "phases/17_FAILURE_RECOVERY_SECURITY_AND_SCALING_EVIDENCE.md",
+      "bytes": 3465,
+      "sha256": "a510eb0eb959f42f089ad3e0247c82a80bc885e8d321a35c834b3732d72baab5"
+    },
+    {
+      "path": "phases/18_FINAL_VISUAL_CRAFTSMANSHIP_AND_ACCESSIBILITY_PASS.md",
+      "bytes": 3375,
+      "sha256": "02ef2afc658c21a1aba35cec074712109533a914789228e7f73d57ccd4290789"
+    },
+    {
+      "path": "phases/19_RELEASE_REHEARSAL_JUDGE_CHALLENGE_AND_HANDOVER.md",
+      "bytes": 3435,
+      "sha256": "ea722ebaa5beca152ff4c1b4510a3a3f268f96a27ff16c14a44a3f7ea73dcbd7"
+    },
+    {
+      "path": "phase_definitions.json",
+      "bytes": 54383,
+      "sha256": "a3f5304ed4cb1bd4aeb07c6e3b18dd6068310a58cc6c372814f290279f9dd6f8"
+    },
+    {
+      "path": "references/BLUEPRINT.md",
+      "bytes": 161762,
+      "sha256": "3e0bcafc215f1d16a7a72b23e495f549c6085a7f8247ea9ff66c6e99d6fff9cf"
+    },
+    {
+      "path": "references/BLUEPRINT.pdf",
+      "bytes": 1561656,
+      "sha256": "e8937dbd0af504ca559928e58fd990d56680fa75eddcd1c75beb165e7cea1373"
+    },
+    {
+      "path": "references/PlantUML/D01.png",
+      "bytes": 28874,
+      "sha256": "2d43f7b8c8a0c253598c35a7c3ae4404db448ccfc9d0ab9451a3aa2292cece32"
+    },
+    {
+      "path": "references/PlantUML/D01.puml",
+      "bytes": 689,
+      "sha256": "33f9b06bd78d979f7586b49e10f0e60ce519bbedfef216577b4ff5ea0099652b"
+    },
+    {
+      "path": "references/PlantUML/D02.png",
+      "bytes": 29524,
+      "sha256": "2e824873b64d91c728d7537314c85b7110f9aeffe17463900c8c9e4bcb743113"
+    },
+    {
+      "path": "references/PlantUML/D02.puml",
+      "bytes": 665,
+      "sha256": "b0d7e538af0528f7cd168ffc598d6ba55f5b63cc6a252c14fc38d547df47a6ee"
+    },
+    {
+      "path": "references/PlantUML/D03.png",
+      "bytes": 27131,
+      "sha256": "54ebcae44864e6ae8eca3b6b8b9237338f3b92585862fd5a2e920e938f7e5391"
+    },
+    {
+      "path": "references/PlantUML/D03.puml",
+      "bytes": 691,
+      "sha256": "15bb1f39bf8eeb52631a271d24657475881312a896ba01a2bc9f5f5f6f0ed44f"
+    },
+    {
+      "path": "references/PlantUML/D04.png",
+      "bytes": 23042,
+      "sha256": "06f802176a50d767c0c4c1c8c46210d5ec1809178f6707893eafc50301db8d6a"
+    },
+    {
+      "path": "references/PlantUML/D04.puml",
+      "bytes": 665,
+      "sha256": "4a73786511a181fab76b4c5b696371a59864ada855eaef1bd496304656d5830c"
+    },
+    {
+      "path": "references/PlantUML/D05.png",
+      "bytes": 30205,
+      "sha256": "dca17a6bcc350afc6e40e9151b819794d697d8f7ef3ebd7084a527f63aa0247c"
+    },
+    {
+      "path": "references/PlantUML/D05.puml",
+      "bytes": 748,
+      "sha256": "e5f2442e99d9d5ec1ff266bca599468e88d56da67094503f3291d2f65e4fbf19"
+    },
+    {
+      "path": "references/PlantUML/D06.png",
+      "bytes": 34893,
+      "sha256": "ff3a5c028b754d3eaa5b0cdbcc6c490ff626774be0118b31b90b99b415d4982a"
+    },
+    {
+      "path": "references/PlantUML/D06.puml",
+      "bytes": 776,
+      "sha256": "94b2ceaa74490849bce963db0821cb24dfe070d2e40c61fbfa87ff16db468946"
+    },
+    {
+      "path": "references/PlantUML/D07.png",
+      "bytes": 48768,
+      "sha256": "7f5133aa864f934fd5936d587f7bd8f70b2cee1558b71bf08f17cd0efb2b1c46"
+    },
+    {
+      "path": "references/PlantUML/D07.puml",
+      "bytes": 650,
+      "sha256": "521b3f7c674938d380ae442fc0e864e51ee4b8e36870dba61c9d58cf4edea0a9"
+    },
+    {
+      "path": "references/PlantUML/D08.png",
+      "bytes": 52688,
+      "sha256": "e5dec5a3d7c138fb91006ee8093a056b35f9109ce750584bbbc12b86dd74cf35"
+    },
+    {
+      "path": "references/PlantUML/D08.puml",
+      "bytes": 737,
+      "sha256": "b16c1f446e4853bb073ad227ddbf93b2b1d22a540edde256eafc45f824c2cee9"
+    },
+    {
+      "path": "references/PlantUML/D09.png",
+      "bytes": 44141,
+      "sha256": "c8a64c8dfbba86186272e4d85dbef69be4472f29d600117e2e5838554a037597"
+    },
+    {
+      "path": "references/PlantUML/D09.puml",
+      "bytes": 564,
+      "sha256": "da55f465eda3a0a2b67c585f385ab89000f9bd384054944b543e80ed8b81e36a"
+    },
+    {
+      "path": "references/PlantUML/D10.png",
+      "bytes": 28291,
+      "sha256": "a257e85398246ed5d15701306360f03e763179fd80c1f257e3bcd45c90f15e6e"
+    },
+    {
+      "path": "references/PlantUML/D10.puml",
+      "bytes": 714,
+      "sha256": "07bbd8f0466129682f01c5dc35b95a4a6dda8149d90fed297c4d9d00a3840070"
+    },
+    {
+      "path": "references/PlantUML/D11.png",
+      "bytes": 58647,
+      "sha256": "443ca2fc6482cc87df3e9d26451997cb1a86cfa5439545d8890eebdc130ab0c3"
+    },
+    {
+      "path": "references/PlantUML/D11.puml",
+      "bytes": 733,
+      "sha256": "ce6a401b452749690654203382f29a37258b3a9d0ed8fbc3f36ae62b2586f24f"
+    },
+    {
+      "path": "references/PlantUML/D12.png",
+      "bytes": 113970,
+      "sha256": "652bf8a310402d7e02dd5ffa833c91aa4acf54d31c0e19fc85c32f4abed11f9d"
+    },
+    {
+      "path": "references/PlantUML/D12.puml",
+      "bytes": 1596,
+      "sha256": "d644c0c30c397b9e016f4fe1460fffab5e7938946cf024a0bb56a1208a2ab186"
+    },
+    {
+      "path": "references/PlantUML/D12_authority.png",
+      "bytes": 28745,
+      "sha256": "43177a30599abf285b4ab73d1729039330c8d70c2ce0d280763b5b2096f16403"
+    },
+    {
+      "path": "references/PlantUML/D12_authority.puml",
+      "bytes": 552,
+      "sha256": "474e926aeffdda31cc4f94dee3fab98e2aa4b7bfb0b480698c7732960a9d4ef6"
+    },
+    {
+      "path": "references/PlantUML/D12_plan.png",
+      "bytes": 41098,
+      "sha256": "31b95e8b992114b24b07ab9db076e1dbff2091fb64862dabde2bf6937a3b8a85"
+    },
+    {
+      "path": "references/PlantUML/D12_plan.puml",
+      "bytes": 708,
+      "sha256": "91f94d23e91586d4218ddad6b8865df0be1218f5e044ee3395f0cd5d0c6ea2a8"
+    },
+    {
+      "path": "references/PlantUML/D12_task.png",
+      "bytes": 22270,
+      "sha256": "6f55876fe14468f694c0cf344b8ff5bfb9784d36c89decf8234535465d806adf"
+    },
+    {
+      "path": "references/PlantUML/D12_task.puml",
+      "bytes": 495,
+      "sha256": "9b44fd99d226aad060dedbf4341b8d4ccdf120b76a1500aa2e49d9a2ddf6c8d9"
+    },
+    {
+      "path": "references/PlantUML/D13.png",
+      "bytes": 32169,
+      "sha256": "1ca7482a89c6e38cf694d2417d648ca51ee434e87d03c5e93029c2f9ce307e03"
+    },
+    {
+      "path": "references/PlantUML/D13.puml",
+      "bytes": 748,
+      "sha256": "b502395beafbf0b3570769cdd955f49230329b162c35c8b86b89b844965e2cd4"
+    },
+    {
+      "path": "references/PlantUML/D14.png",
+      "bytes": 67979,
+      "sha256": "5513c692554604cd8c2da0dbd4f3f24f1d3bb7bb93645fd1fc581a70f53faba1"
+    },
+    {
+      "path": "references/PlantUML/D14.puml",
+      "bytes": 909,
+      "sha256": "0b80e906888604ec30e34d601c842e65d1fe861050525d358e93f65b793183a9"
+    },
+    {
+      "path": "references/PlantUML/D15.png",
+      "bytes": 30102,
+      "sha256": "2b13d2cd2a2596eb992066bfe020a7989b113c5438585148e24021c80e798c09"
+    },
+    {
+      "path": "references/PlantUML/D15.puml",
+      "bytes": 732,
+      "sha256": "18e32da99b90381f4571bfc8835b0ec4558ceeaf7ccfa373370f4baebe0ed7a0"
+    },
+    {
+      "path": "references/PlantUML/D16.png",
+      "bytes": 33016,
+      "sha256": "234b577b3d1ca902942a0f5a6d96c08cb538983372dc49925118b8c52c51ff1e"
+    },
+    {
+      "path": "references/PlantUML/D16.puml",
+      "bytes": 758,
+      "sha256": "f9c811a8e2b039491e7493f1f78bcb8881b39754c5d27b1a3ba73538fb9d9179"
+    },
+    {
+      "path": "references/PlantUML/D17.png",
+      "bytes": 28505,
+      "sha256": "2b5604eea1ae06b086d406816578855cfd7b61c1bfa559b4130403851a4d98b6"
+    },
+    {
+      "path": "references/PlantUML/D17.puml",
+      "bytes": 705,
+      "sha256": "8054b4e7eaee49f20d8fc6d6478c6d95550b53b50071a728c33ad4657fee9ba5"
+    },
+    {
+      "path": "references/PlantUML/D18.png",
+      "bytes": 37364,
+      "sha256": "d9e0a32c4b9cc0207b3405b68d9ce946088a91fb945b4fe8148252c4797c08f0"
+    },
+    {
+      "path": "references/PlantUML/D18.puml",
+      "bytes": 797,
+      "sha256": "4404ebc1102a8031a0d3243aab96268212a9a5f54661efffa94a3db4f3b070f7"
+    },
+    {
+      "path": "references/PlantUML/D19.png",
+      "bytes": 33569,
+      "sha256": "272dd84e74043d3b0d34af5d3d6046c03224312f931887b09ac90c6f66d94255"
+    },
+    {
+      "path": "references/PlantUML/D19.puml",
+      "bytes": 775,
+      "sha256": "876bf1d73ffdfb3ccf2c67f0ae981648c11bf3cb610acc7117d4754f09564060"
+    },
+    {
+      "path": "references/PlantUML/D20.png",
+      "bytes": 27346,
+      "sha256": "136a22ab249a4e68660121cc477e35e631ed1e272bf4d9c86e1f924374e36157"
+    },
+    {
+      "path": "references/PlantUML/D20.puml",
+      "bytes": 687,
+      "sha256": "3626a954519a0db5acf95bd98939d0e62afd0c758908008e5d408958a7271b60"
+    },
+    {
+      "path": "REVIEW_NOTES.md",
+      "bytes": 2044,
+      "sha256": "ec06117eb56196acc59b029340dcf313d476f0593d13637af4551b59da73466f"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 8522,
+      "sha256": "84306c6c578687f7b1096f03617e228b315840d8b74fe449be9716fcc3577804"
+    },
+    {
+      "path": "utilities/FIX_REGRESSION.md",
+      "bytes": 1593,
+      "sha256": "6bc621410a837d60ffc78bb744bcb4d2cc1a996ef1db7e0a6041c7a66c6c337f"
+    },
+    {
+      "path": "utilities/RESUME.md",
+      "bytes": 1197,
+      "sha256": "37b124c84704041c2675d1b07b1d357645a6b40c5ea8f9c03ff278b3c6c96be8"
+    }
+  ]
+}

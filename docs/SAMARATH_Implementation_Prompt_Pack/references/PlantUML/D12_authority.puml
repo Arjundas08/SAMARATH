@@ -1,0 +1,20 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 16
+hide empty description
+title D12 - Railway authority mirror
+
+ state "UNKNOWN" as AU
+ state "REPORTED_GRANTED" as AG
+ state "REPORTED_IN_EXECUTION" as AX
+ state "REPORTED_RESTORATION_PENDING" as AT
+ state "REPORTED_RELEASED" as AR
+ AU --> AG : authorized observation
+ AG --> AX : authorized observation
+ AX --> AT : authorized observation
+ AT --> AR : authorized observation
+@enduml

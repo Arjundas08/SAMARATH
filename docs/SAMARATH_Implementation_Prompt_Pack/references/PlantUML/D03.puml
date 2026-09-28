@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D03 - Three input modes
+rectangle "TEST fixtures" as n0
+rectangle "Authorized exports" as n1
+rectangle "Authorized interfaces" as n2
+rectangle "Versioned adapter contract" as n3
+rectangle "Normalize + validate" as n4
+rectangle "Immutable snapshot" as n5
+rectangle "Same planning pipeline" as n6
+n0 --> n3 : test badge
+n1 --> n3 : manifest
+n2 --> n3 : contract
+n3 --> n4 : records
+n4 --> n5 : accepted only
+n5 --> n6 : snapshot ID
+@enduml

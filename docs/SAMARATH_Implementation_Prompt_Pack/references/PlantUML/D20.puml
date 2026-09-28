@@ -1,0 +1,24 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D20 - Example package execution DAG
+rectangle "Setup / protection: 10 min" as n0
+rectangle "Engineering work: 40 min" as n1
+rectangle "S&T work: 25 min" as n2
+rectangle "Joint testing: 15 min" as n3
+rectangle "Restoration: 10 min" as n4
+rectangle "Total occupation: 75 min" as n5
+n0 --> n1 : parallel if allowed
+n0 --> n2 : parallel if allowed
+n1 --> n3 : complete
+n2 --> n3 : complete
+n3 --> n4 : then
+n4 --> n5 : all phases
+@enduml

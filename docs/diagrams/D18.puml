@@ -1,0 +1,26 @@
+@startuml
+skinparam dpi 180
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #237B83
+skinparam roundcorner 8
+top to bottom direction
+title D18 - Execution feedback loop
+rectangle "Authorized execution observation" as n0
+rectangle "Chronology / units / scope check" as n1
+rectangle "ActualOutcome + correction revision" as n2
+rectangle "Completed quantity / residual demand" as n3
+rectangle "Plan-versus-actual metrics" as n4
+rectangle "Reviewed estimate updates" as n5
+rectangle "Future snapshot" as n6
+n0 --> n1 : source ID
+n1 --> n2 : accepted
+n2 --> n3 : task linkage
+n2 --> n4 : version linkage
+n3 --> n5 : remaining work
+n4 --> n5 : analysis
+n5 --> n6 : approved update
+@enduml
