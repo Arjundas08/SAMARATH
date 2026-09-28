@@ -24,8 +24,8 @@ def is_port_reachable(host: str = "localhost", port: int = 5432, timeout: float 
         return False
 
 
-# If configured for postgres, check if port is actually listening
-if "postgres" in db_url.lower():
+# If configured for postgres, check if port is actually listening (only when targeting localhost)
+if "postgres" in db_url.lower() and ("localhost" in db_url.lower() or "127.0.0.1" in db_url):
     if not is_port_reachable("localhost", 5432, timeout=0.3):
         logger.warning("PostgreSQL daemon not detected on localhost:5432. Activating local SQLite engine.")
         db_url = "sqlite+aiosqlite:///./samarath.db"

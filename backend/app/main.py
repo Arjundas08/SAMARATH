@@ -65,12 +65,26 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 async def on_startup():
     logger.info(f"Starting {settings.APP_NAME} in {settings.APP_ENV} mode on port {settings.APP_PORT}")
     try:
-        from app.db.session import async_engine
+        from app.db.session import async_engine, async_session_factory
         from app.db.base import Base
         import app.db.models  # Register all model classes
         async with async_engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
         logger.info("Database schema verified / initialized.")
+
+        # Auto-seed if database is empty
+        try:
+            from sqlalchemy import select
+            from app.db.models import Corridor
+            from app.gateway.service import seed_vayu_kosh_corridor
+            async with async_session_factory() as session:
+                res = await session.execute(select(Corridor))
+                if not res.scalars().first():
+                    logger.info("Empty database detected. Auto-seeding Vadodara-Kazipet corridor...")
+                    await seed_vayu_kosh_corridor(session)
+                    logger.info("Auto-seeding completed.")
+        except Exception as seed_err:
+            logger.warning(f"Auto-seed skipped or encountered error: {seed_err}")
     except Exception as e:
         logger.warning(f"Could not auto-initialize DB schema on startup: {e}")
 
