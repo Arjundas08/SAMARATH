@@ -1,0 +1,50 @@
+# Render Blueprint — One-click deploy for SAMARATH
+# https://render.com/docs/blueprint-spec
+
+services:
+  # Backend API (FastAPI)
+  - type: web
+    name: samarath-api
+    runtime: python
+    region: singapore  # Closest to India
+    plan: free
+    buildCommand: |
+      cd backend && pip install -r requirements.txt && pip install aiosqlite
+    startCommand: |
+      cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_NAME
+        value: SAMARATH
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./samarath.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEFAULT_CORRIDOR
+        value: VKC
+      - key: TZ
+        value: Asia/Kolkata
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+
+  # Frontend (Static Site)
+  - type: web
+    name: samarath-ui
+    runtime: static
+    region: singapore
+    plan: free
+    buildCommand: cd frontend && npm ci && npm run build
+    staticPublishPath: frontend/dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://samarath-api.onrender.com/api/*
+      - type: rewrite
+        source: /*
+        destination: /index.html
